@@ -14,6 +14,13 @@
 		2B0EF8B627D8BB22000506EF /* fundooNotes.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2B0EF8B427D8BB22000506EF /* fundooNotes.xcdatamodeld */; };
 		2B0EF8B827D8BB2A000506EF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2B0EF8B727D8BB2A000506EF /* Assets.xcassets */; };
 		2B0EF8BB27D8BB2A000506EF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2B0EF8B927D8BB2A000506EF /* LaunchScreen.storyboard */; };
+		2B0EF8C327D8E083000506EF /* LoginTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B0EF8C227D8E083000506EF /* LoginTableViewController.swift */; };
+		2B0EF8C527DA6CCF000506EF /* String + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B0EF8C427DA6CCE000506EF /* String + Extension.swift */; };
+		2B0EF8C727DAFA15000506EF /* UIViewController + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B0EF8C627DAFA15000506EF /* UIViewController + Extension.swift */; };
+		2BBB856E27DB55F1003D4457 /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BBB856D27DB55F1003D4457 /* SignupViewController.swift */; };
+		2BCDD13C27DF9DF300AC0E5A /* FacebookCore in Frameworks */ = {isa = PBXBuildFile; productRef = 2BCDD13B27DF9DF300AC0E5A /* FacebookCore */; };
+		2BCDD13E27DF9DF300AC0E5A /* FacebookLogin in Frameworks */ = {isa = PBXBuildFile; productRef = 2BCDD13D27DF9DF300AC0E5A /* FacebookLogin */; };
+		80982B8CADCDA70A45BA270C /* Pods_fundooNotes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC0940A2FF86F3E2ABEDAA44 /* Pods_fundooNotes.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +33,13 @@
 		2B0EF8B727D8BB2A000506EF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2B0EF8BA27D8BB2A000506EF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2B0EF8BC27D8BB2A000506EF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2B0EF8C227D8E083000506EF /* LoginTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginTableViewController.swift; sourceTree = "<group>"; };
+		2B0EF8C427DA6CCE000506EF /* String + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String + Extension.swift"; sourceTree = "<group>"; };
+		2B0EF8C627DAFA15000506EF /* UIViewController + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController + Extension.swift"; sourceTree = "<group>"; };
+		2BBB856D27DB55F1003D4457 /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
+		37591BEFC910C9E81B73A3C5 /* Pods-fundooNotes.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-fundooNotes.debug.xcconfig"; path = "Target Support Files/Pods-fundooNotes/Pods-fundooNotes.debug.xcconfig"; sourceTree = "<group>"; };
+		41F897841F429BE66207919C /* Pods-fundooNotes.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-fundooNotes.release.xcconfig"; path = "Target Support Files/Pods-fundooNotes/Pods-fundooNotes.release.xcconfig"; sourceTree = "<group>"; };
+		FC0940A2FF86F3E2ABEDAA44 /* Pods_fundooNotes.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_fundooNotes.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +47,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				80982B8CADCDA70A45BA270C /* Pods_fundooNotes.framework in Frameworks */,
+				2BCDD13C27DF9DF300AC0E5A /* FacebookCore in Frameworks */,
+				2BCDD13E27DF9DF300AC0E5A /* FacebookLogin in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -44,6 +61,8 @@
 			children = (
 				2B0EF8AA27D8BB22000506EF /* fundooNotes */,
 				2B0EF8A927D8BB22000506EF /* Products */,
+				88234263053EC90958D13926 /* Pods */,
+				F796C2C9B0C7F117E2B176C1 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -61,6 +80,8 @@
 				2B0EF8AB27D8BB22000506EF /* AppDelegate.swift */,
 				2B0EF8AD27D8BB22000506EF /* SceneDelegate.swift */,
 				2B0EF8AF27D8BB22000506EF /* ViewController.swift */,
+				2B0EF8C827DB0300000506EF /* controller */,
+				2B0EF8C927DB0325000506EF /* utill */,
 				2B0EF8B127D8BB22000506EF /* Main.storyboard */,
 				2B0EF8B727D8BB2A000506EF /* Assets.xcassets */,
 				2B0EF8B927D8BB2A000506EF /* LaunchScreen.storyboard */,
@@ -70,6 +91,41 @@
 			path = fundooNotes;
 			sourceTree = "<group>";
 		};
+		2B0EF8C827DB0300000506EF /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				2B0EF8C227D8E083000506EF /* LoginTableViewController.swift */,
+				2BBB856D27DB55F1003D4457 /* SignupViewController.swift */,
+			);
+			path = controller;
+			sourceTree = "<group>";
+		};
+		2B0EF8C927DB0325000506EF /* utill */ = {
+			isa = PBXGroup;
+			children = (
+				2B0EF8C627DAFA15000506EF /* UIViewController + Extension.swift */,
+				2B0EF8C427DA6CCE000506EF /* String + Extension.swift */,
+			);
+			path = utill;
+			sourceTree = "<group>";
+		};
+		88234263053EC90958D13926 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				37591BEFC910C9E81B73A3C5 /* Pods-fundooNotes.debug.xcconfig */,
+				41F897841F429BE66207919C /* Pods-fundooNotes.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		F796C2C9B0C7F117E2B176C1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FC0940A2FF86F3E2ABEDAA44 /* Pods_fundooNotes.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -77,6 +133,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2B0EF8BF27D8BB2A000506EF /* Build configuration list for PBXNativeTarget "fundooNotes" */;
 			buildPhases = (
+				76D629AC1AD5F08016059AAB /* [CP] Check Pods Manifest.lock */,
 				2B0EF8A427D8BB22000506EF /* Sources */,
 				2B0EF8A527D8BB22000506EF /* Frameworks */,
 				2B0EF8A627D8BB22000506EF /* Resources */,
@@ -86,6 +143,10 @@
 			dependencies = (
 			);
 			name = fundooNotes;
+			packageProductDependencies = (
+				2BCDD13B27DF9DF300AC0E5A /* FacebookCore */,
+				2BCDD13D27DF9DF300AC0E5A /* FacebookLogin */,
+			);
 			productName = fundooNotes;
 			productReference = 2B0EF8A827D8BB22000506EF /* fundooNotes.app */;
 			productType = "com.apple.product-type.application";
@@ -114,6 +175,9 @@
 				Base,
 			);
 			mainGroup = 2B0EF89F27D8BB22000506EF;
+			packageReferences = (
+				2BCDD13A27DF9DF300AC0E5A /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */,
+			);
 			productRefGroup = 2B0EF8A927D8BB22000506EF /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -136,12 +200,41 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		76D629AC1AD5F08016059AAB /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-fundooNotes-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		2B0EF8A427D8BB22000506EF /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2B0EF8C727DAFA15000506EF /* UIViewController + Extension.swift in Sources */,
+				2B0EF8C327D8E083000506EF /* LoginTableViewController.swift in Sources */,
+				2BBB856E27DB55F1003D4457 /* SignupViewController.swift in Sources */,
 				2B0EF8B627D8BB22000506EF /* fundooNotes.xcdatamodeld in Sources */,
+				2B0EF8C527DA6CCF000506EF /* String + Extension.swift in Sources */,
 				2B0EF8B027D8BB22000506EF /* ViewController.swift in Sources */,
 				2B0EF8AC27D8BB22000506EF /* AppDelegate.swift in Sources */,
 				2B0EF8AE27D8BB22000506EF /* SceneDelegate.swift in Sources */,
@@ -288,6 +381,7 @@
 		};
 		2B0EF8C027D8BB2A000506EF /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 37591BEFC910C9E81B73A3C5 /* Pods-fundooNotes.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -295,6 +389,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = fundooNotes/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = fundooNotes;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -315,6 +410,7 @@
 		};
 		2B0EF8C127D8BB2A000506EF /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 41F897841F429BE66207919C /* Pods-fundooNotes.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -322,6 +418,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = fundooNotes/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = fundooNotes;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -362,6 +459,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		2BCDD13A27DF9DF300AC0E5A /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/facebook/facebook-ios-sdk";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		2BCDD13B27DF9DF300AC0E5A /* FacebookCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2BCDD13A27DF9DF300AC0E5A /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */;
+			productName = FacebookCore;
+		};
+		2BCDD13D27DF9DF300AC0E5A /* FacebookLogin */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2BCDD13A27DF9DF300AC0E5A /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */;
+			productName = FacebookLogin;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		2B0EF8B427D8BB22000506EF /* fundooNotes.xcdatamodeld */ = {
