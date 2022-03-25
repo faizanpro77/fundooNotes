@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2B0CCCB227ED76A8009A983D /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B0CCCB127ED76A8009A983D /* HomeController.swift */; };
+		2B0CCCB427ED76FB009A983D /* ContainerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B0CCCB327ED76FB009A983D /* ContainerController.swift */; };
+		2B0CCCB627ED7720009A983D /* MenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B0CCCB527ED7720009A983D /* MenuController.swift */; };
+		2B0CCCB827ED775F009A983D /* SettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B0CCCB727ED775F009A983D /* SettingsController.swift */; };
+		2B0CCCBB27ED77AD009A983D /* MenuOptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B0CCCBA27ED77AD009A983D /* MenuOptionCell.swift */; };
+		2B0CCCBE27ED7803009A983D /* MenuOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B0CCCBD27ED7803009A983D /* MenuOption.swift */; };
+		2B0CCCC027ED786C009A983D /* Protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B0CCCBF27ED786C009A983D /* Protocol.swift */; };
 		2B0EF8AC27D8BB22000506EF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B0EF8AB27D8BB22000506EF /* AppDelegate.swift */; };
 		2B0EF8AE27D8BB22000506EF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B0EF8AD27D8BB22000506EF /* SceneDelegate.swift */; };
 		2B0EF8B027D8BB22000506EF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B0EF8AF27D8BB22000506EF /* ViewController.swift */; };
@@ -29,6 +36,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2B0CCCB127ED76A8009A983D /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
+		2B0CCCB327ED76FB009A983D /* ContainerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerController.swift; sourceTree = "<group>"; };
+		2B0CCCB527ED7720009A983D /* MenuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuController.swift; sourceTree = "<group>"; };
+		2B0CCCB727ED775F009A983D /* SettingsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsController.swift; sourceTree = "<group>"; };
+		2B0CCCBA27ED77AD009A983D /* MenuOptionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuOptionCell.swift; sourceTree = "<group>"; };
+		2B0CCCBD27ED7803009A983D /* MenuOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuOption.swift; sourceTree = "<group>"; };
+		2B0CCCBF27ED786C009A983D /* Protocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocol.swift; sourceTree = "<group>"; };
 		2B0EF8A827D8BB22000506EF /* fundooNotes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = fundooNotes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B0EF8AB27D8BB22000506EF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2B0EF8AD27D8BB22000506EF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -66,6 +80,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2B0CCCB927ED7794009A983D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				2B0CCCBA27ED77AD009A983D /* MenuOptionCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		2B0CCCBC27ED77EA009A983D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				2B0CCCBD27ED7803009A983D /* MenuOption.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		2B0EF89F27D8BB22000506EF = {
 			isa = PBXGroup;
 			children = (
@@ -87,6 +117,8 @@
 		2B0EF8AA27D8BB22000506EF /* fundooNotes */ = {
 			isa = PBXGroup;
 			children = (
+				2B0CCCBC27ED77EA009A983D /* Model */,
+				2B0CCCB927ED7794009A983D /* View */,
 				2B2F326C27E39BA4002B2805 /* CollectionCells */,
 				2B0EF8AB27D8BB22000506EF /* AppDelegate.swift */,
 				2B0EF8AD27D8BB22000506EF /* SceneDelegate.swift */,
@@ -110,6 +142,10 @@
 				2BBB856D27DB55F1003D4457 /* SignupViewController.swift */,
 				2B2F326A27E3971F002B2805 /* DashboardViewController.swift */,
 				2B7684CA27E4F14100E1A06C /* NoteDetailViewController.swift */,
+				2B0CCCB127ED76A8009A983D /* HomeController.swift */,
+				2B0CCCB327ED76FB009A983D /* ContainerController.swift */,
+				2B0CCCB527ED7720009A983D /* MenuController.swift */,
+				2B0CCCB727ED775F009A983D /* SettingsController.swift */,
 			);
 			path = controller;
 			sourceTree = "<group>";
@@ -119,6 +155,7 @@
 			children = (
 				2B0EF8C627DAFA15000506EF /* UIViewController + Extension.swift */,
 				2B0EF8C427DA6CCE000506EF /* String + Extension.swift */,
+				2B0CCCBF27ED786C009A983D /* Protocol.swift */,
 			);
 			path = utill;
 			sourceTree = "<group>";
@@ -276,12 +313,19 @@
 				2B2F326F27E39BE6002B2805 /* NotesCollectionViewCell.swift in Sources */,
 				2B0EF8C727DAFA15000506EF /* UIViewController + Extension.swift in Sources */,
 				2B2F326B27E3971F002B2805 /* DashboardViewController.swift in Sources */,
+				2B0CCCBE27ED7803009A983D /* MenuOption.swift in Sources */,
 				2B0EF8C327D8E083000506EF /* LoginTableViewController.swift in Sources */,
+				2B0CCCC027ED786C009A983D /* Protocol.swift in Sources */,
 				2BBB856E27DB55F1003D4457 /* SignupViewController.swift in Sources */,
 				2B0EF8B627D8BB22000506EF /* fundooNotes.xcdatamodeld in Sources */,
+				2B0CCCB827ED775F009A983D /* SettingsController.swift in Sources */,
 				2B0EF8C527DA6CCF000506EF /* String + Extension.swift in Sources */,
+				2B0CCCB427ED76FB009A983D /* ContainerController.swift in Sources */,
+				2B0CCCB627ED7720009A983D /* MenuController.swift in Sources */,
 				2B0EF8B027D8BB22000506EF /* ViewController.swift in Sources */,
+				2B0CCCB227ED76A8009A983D /* HomeController.swift in Sources */,
 				2B0EF8AC27D8BB22000506EF /* AppDelegate.swift in Sources */,
+				2B0CCCBB27ED77AD009A983D /* MenuOptionCell.swift in Sources */,
 				2B0EF8AE27D8BB22000506EF /* SceneDelegate.swift in Sources */,
 				2B7684CB27E4F14100E1A06C /* NoteDetailViewController.swift in Sources */,
 			);
