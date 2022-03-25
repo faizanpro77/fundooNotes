@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import FirebaseAuth
+
 
 class SignupViewController: UITableViewController {
     
@@ -47,6 +49,7 @@ class SignupViewController: UITableViewController {
                         if password == conPassword{
                             //Navigation code
                             print("navigation code Yeah")
+                            firbaseAuthEmailPassword()
                         }else{
                             print("password does not matched")
                         }
@@ -58,7 +61,25 @@ class SignupViewController: UITableViewController {
         }else{
             print("Please select profile picture")
         }
+        
     }
+    
+    func firbaseAuthEmailPassword() {
+        
+        Auth.auth().createUser(withEmail: txtEmail.text!, password: txtPasswod.text!) {  authResult, error in
+            if error != nil {
+                print(error?.localizedDescription ?? "Exception")
+            }else {
+                print("LOGIN - \(String(describing: authResult?.user.uid))")
+//                if authResult?.user.uid != nil{
+//
+//                }else{
+//                    self.navigationController?.popViewController(animated: true)
+//                }
+            }
+        }
+    }
+    
     
     @IBAction func btnLoginClicked(_ sender: UIButton) {
         self.navigationController?.popViewController(animated: true)
@@ -68,6 +89,8 @@ class SignupViewController: UITableViewController {
     //    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
     //        return UIScreen.main.bounds.height
     //    }
+    
+    
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
