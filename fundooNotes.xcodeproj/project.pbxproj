@@ -32,6 +32,7 @@
 		2BBB856E27DB55F1003D4457 /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BBB856D27DB55F1003D4457 /* SignupViewController.swift */; };
 		2BCDD13C27DF9DF300AC0E5A /* FacebookCore in Frameworks */ = {isa = PBXBuildFile; productRef = 2BCDD13B27DF9DF300AC0E5A /* FacebookCore */; };
 		2BCDD13E27DF9DF300AC0E5A /* FacebookLogin in Frameworks */ = {isa = PBXBuildFile; productRef = 2BCDD13D27DF9DF300AC0E5A /* FacebookLogin */; };
+		2BEDFF9E27EE4C0E00CF61F0 /* NotesPCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BEDFF9D27EE4C0E00CF61F0 /* NotesPCollectionViewCell.swift */; };
 		80982B8CADCDA70A45BA270C /* Pods_fundooNotes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC0940A2FF86F3E2ABEDAA44 /* Pods_fundooNotes.framework */; };
 /* End PBXBuildFile section */
 
@@ -61,6 +62,7 @@
 		2B7684CA27E4F14100E1A06C /* NoteDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteDetailViewController.swift; sourceTree = "<group>"; };
 		2BB2B04227E0E3D9009F760D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		2BBB856D27DB55F1003D4457 /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
+		2BEDFF9D27EE4C0E00CF61F0 /* NotesPCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesPCollectionViewCell.swift; sourceTree = "<group>"; };
 		37591BEFC910C9E81B73A3C5 /* Pods-fundooNotes.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-fundooNotes.debug.xcconfig"; path = "Target Support Files/Pods-fundooNotes/Pods-fundooNotes.debug.xcconfig"; sourceTree = "<group>"; };
 		41F897841F429BE66207919C /* Pods-fundooNotes.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-fundooNotes.release.xcconfig"; path = "Target Support Files/Pods-fundooNotes/Pods-fundooNotes.release.xcconfig"; sourceTree = "<group>"; };
 		FC0940A2FF86F3E2ABEDAA44 /* Pods_fundooNotes.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_fundooNotes.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -163,10 +165,27 @@
 		2B2F326C27E39BA4002B2805 /* CollectionCells */ = {
 			isa = PBXGroup;
 			children = (
+				2BEDFF9C27EE4BCD00CF61F0 /* NotesPCollectionViewCell */,
+				2BEDFF9B27EE4B9B00CF61F0 /* NotesCollectionViewCell */,
+			);
+			path = CollectionCells;
+			sourceTree = "<group>";
+		};
+		2BEDFF9B27EE4B9B00CF61F0 /* NotesCollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
 				2B2F326D27E39BE6002B2805 /* NotesCollectionViewCell.swift */,
 				2B2F326E27E39BE6002B2805 /* NotesCollectionViewCell.xib */,
 			);
-			path = CollectionCells;
+			path = NotesCollectionViewCell;
+			sourceTree = "<group>";
+		};
+		2BEDFF9C27EE4BCD00CF61F0 /* NotesPCollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				2BEDFF9D27EE4C0E00CF61F0 /* NotesPCollectionViewCell.swift */,
+			);
+			path = NotesPCollectionViewCell;
 			sourceTree = "<group>";
 		};
 		88234263053EC90958D13926 /* Pods */ = {
@@ -311,6 +330,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2B2F326F27E39BE6002B2805 /* NotesCollectionViewCell.swift in Sources */,
+				2BEDFF9E27EE4C0E00CF61F0 /* NotesPCollectionViewCell.swift in Sources */,
 				2B0EF8C727DAFA15000506EF /* UIViewController + Extension.swift in Sources */,
 				2B2F326B27E3971F002B2805 /* DashboardViewController.swift in Sources */,
 				2B0CCCBE27ED7803009A983D /* MenuOption.swift in Sources */,

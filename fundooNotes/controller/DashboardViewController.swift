@@ -8,6 +8,9 @@
 import UIKit
 
 class DashboardViewController: UIViewController {
+    
+    var delegate: HomeControllerDelegate?
+    
     var notes: [Note] = [
         Note(title: "faizan", description: "Shaikh"),
         Note(title: "danish", description: "khan"),
@@ -16,9 +19,14 @@ class DashboardViewController: UIViewController {
     @IBOutlet weak var collectionViewDashboard: UICollectionView!
     @IBOutlet weak var viewNavigationBar: UIView!
     @IBOutlet weak var viewTabBar: UIView!
-    
     @IBOutlet weak var addNewNoteButton: UIButton!
+    @IBOutlet weak var showProfileButton: UIButton!
+    @IBOutlet weak var gridListButton: UIButton!
+    @IBOutlet weak var searchButton: UITextField!
+    @IBOutlet weak var menuButton: UIButton!
     
+    
+    private var overlayView: UIView?
     
     
     override func viewDidLoad() {
@@ -32,6 +40,61 @@ class DashboardViewController: UIViewController {
         
         collectionViewDashboard.register(UINib(nibName: "NotesCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "NotesCollectionViewCellID")
         
+        setUpUI()
+        
+    }
+    
+    
+    
+    private func setUpUI() {
+        addNewNoteButton.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.25).cgColor
+        addNewNoteButton.layer.shadowOffset = CGSize(width: 0, height: 2.0)
+        addNewNoteButton.layer.shadowOpacity = 1.0
+        addNewNoteButton.layer.shadowRadius = 5
+        addNewNoteButton.layer.masksToBounds = false
+        addNewNoteButton.layer.cornerRadius = 15
+        
+        showProfileButton.layer.cornerRadius = showProfileButton.frame.width/2
+        viewNavigationBar.layer.cornerRadius = viewNavigationBar.frame.height/2
+        
+        
+        
+    }
+    
+    
+    @IBAction func showProfile(_ sender: UIButton) {
+        
+    }
+    
+    @IBAction func toggleGridList(_ sender: UIButton) {
+    }
+    
+    
+    @IBAction func searchNote(_ sender: UITextField) {
+    }
+    
+    
+    
+    @IBAction func showMenu(_ sender: UIButton) {
+        delegate?.handleMenuToggle(forMenuOption: nil)
+        
+        guard let overlayView = overlayView else {
+            overlayView = UIView()
+            overlayView?.backgroundColor = UIColor.black.withAlphaComponent(0.2)
+            view.addSubview(overlayView!)
+            overlayView?.frame = view.bounds
+            
+            let tap = UITapGestureRecognizer(target: self, action: #selector(self.handleTap(_:)))
+            overlayView?.addGestureRecognizer(tap)
+            
+            return
+        }
+        overlayView.isHidden = !overlayView.isHidden
+        
+    }
+    
+    @objc func handleTap(_ sender: UITapGestureRecognizer? = nil) {
+        showMenu(UIButton())
     }
     
     

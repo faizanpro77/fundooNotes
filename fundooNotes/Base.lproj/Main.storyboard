@@ -375,51 +375,67 @@
         <!--Dashboard View Controller-->
         <scene sceneID="Jaz-gA-Evj">
             <objects>
-                <viewController id="Mhw-pu-5yx" customClass="DashboardViewController" customModule="fundooNotes" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DashboardViewController" id="Mhw-pu-5yx" customClass="DashboardViewController" customModule="fundooNotes" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="pSx-2W-dY9">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uCe-f0-5No">
-                                <rect key="frame" x="20" y="64" width="374" height="51"/>
+                                <rect key="frame" x="20" y="64" width="374" height="50"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="fH9-xp-VFk">
-                                        <rect key="frame" x="10" y="10" width="354" height="31"/>
+                                        <rect key="frame" x="10" y="10" width="354" height="30"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="igg-yG-Jab">
-                                                <rect key="frame" x="0.0" y="0.0" width="244.5" height="31"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="258.5" height="30"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oPe-cF-Hmq">
-                                                        <rect key="frame" x="0.0" y="0.0" width="50" height="31"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="47" height="30"/>
                                                         <state key="normal" title="Button"/>
-                                                        <buttonConfiguration key="configuration" style="plain" image="menubar.dock.rectangle.badge.record" catalog="system">
+                                                        <buttonConfiguration key="configuration" style="plain" image="list.dash" catalog="system">
                                                             <color key="baseForegroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </buttonConfiguration>
+                                                        <connections>
+                                                            <action selector="showMenu:" destination="Mhw-pu-5yx" eventType="touchUpInside" id="ZuJ-J6-vL5"/>
+                                                        </connections>
                                                     </button>
                                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="245" verticalHuggingPriority="245" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Search your notes" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hLr-En-tfJ">
-                                                        <rect key="frame" x="50" y="0.0" width="194.5" height="31"/>
+                                                        <rect key="frame" x="47" y="0.0" width="211.5" height="30"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <textInputTraits key="textInputTraits"/>
+                                                        <connections>
+                                                            <action selector="searchNote:" destination="Mhw-pu-5yx" eventType="editingDidEnd" id="9Tc-JJ-MEI"/>
+                                                        </connections>
                                                     </textField>
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="GVC-GK-5Le">
-                                                <rect key="frame" x="259.5" y="0.0" width="94.5" height="31"/>
+                                                <rect key="frame" x="273.5" y="0.0" width="80.5" height="30"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="edX-E6-wU3">
-                                                        <rect key="frame" x="0.0" y="0.0" width="45.5" height="31"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="45.5" height="30"/>
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="plain" image="square.grid.2x2" catalog="system">
                                                             <color key="baseForegroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </buttonConfiguration>
+                                                        <connections>
+                                                            <action selector="toggleGridList:" destination="Mhw-pu-5yx" eventType="touchUpInside" id="Y2W-DT-ZmC"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eEg-sB-LrR">
-                                                        <rect key="frame" x="50.5" y="0.0" width="44" height="31"/>
+                                                        <rect key="frame" x="50.5" y="0.0" width="30" height="30"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="30" id="Avj-7d-B5A"/>
+                                                            <constraint firstAttribute="width" secondItem="eEg-sB-LrR" secondAttribute="height" multiplier="1:1" id="uY1-55-FCX"/>
+                                                        </constraints>
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="plain" image="person.fill" catalog="system">
                                                             <color key="baseForegroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </buttonConfiguration>
+                                                        <connections>
+                                                            <action selector="showProfile:" destination="Mhw-pu-5yx" eventType="touchUpInside" id="NXn-bZ-KVP"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                             </stackView>
@@ -482,7 +498,7 @@
                                     </stackView>
                                 </subviews>
                                 <viewLayoutGuide key="safeArea" id="vvn-ds-FCW"/>
-                                <color key="backgroundColor" systemColor="systemGray6Color"/>
+                                <color key="backgroundColor" red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="vvn-ds-FCW" firstAttribute="bottom" secondItem="ucP-0x-acL" secondAttribute="bottom" id="Wow-SN-xQq"/>
                                     <constraint firstItem="ucP-0x-acL" firstAttribute="top" secondItem="LPs-h7-3c9" secondAttribute="top" constant="15" id="oTJ-Qy-7lC"/>
@@ -490,7 +506,7 @@
                                 </constraints>
                             </view>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="sUI-xe-jDT">
-                                <rect key="frame" x="20" y="115" width="374" height="702"/>
+                                <rect key="frame" x="20" y="114" width="374" height="703"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="VmL-VC-fXc">
                                     <size key="itemSize" width="128" height="128"/>
@@ -511,7 +527,7 @@
                             </collectionView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zbc-LJ-QPK">
                                 <rect key="frame" x="314" y="787" width="60" height="60"/>
-                                <color key="backgroundColor" systemColor="systemGray3Color"/>
+                                <color key="backgroundColor" systemColor="systemGray6Color"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="60" id="tGG-9h-mOK"/>
                                     <constraint firstAttribute="height" constant="60" id="tYn-zv-Nyr"/>
@@ -545,13 +561,17 @@
                     <connections>
                         <outlet property="addNewNoteButton" destination="zbc-LJ-QPK" id="aGd-qv-hFX"/>
                         <outlet property="collectionViewDashboard" destination="sUI-xe-jDT" id="fLF-c7-7Lm"/>
+                        <outlet property="gridListButton" destination="edX-E6-wU3" id="mZQ-fU-aVg"/>
+                        <outlet property="menuButton" destination="oPe-cF-Hmq" id="71y-KS-mn6"/>
+                        <outlet property="searchButton" destination="hLr-En-tfJ" id="Snj-ym-der"/>
+                        <outlet property="showProfileButton" destination="eEg-sB-LrR" id="DA9-Az-4mE"/>
                         <outlet property="viewNavigationBar" destination="uCe-f0-5No" id="s6I-7X-JsW"/>
                         <outlet property="viewTabBar" destination="LPs-h7-3c9" id="XLF-Mb-Je2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hwo-IB-PIf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3300.0000000000005" y="196.875"/>
+            <point key="canvasLocation" x="3299" y="205"/>
         </scene>
         <!--Note Detail View Controller-->
         <scene sceneID="rBi-N1-HCB">
@@ -673,7 +693,7 @@
         <image name="arrow.backward" catalog="system" width="128" height="98"/>
         <image name="bell" catalog="system" width="128" height="124"/>
         <image name="checkmark.square" catalog="system" width="128" height="114"/>
-        <image name="menubar.dock.rectangle.badge.record" catalog="system" width="128" height="95"/>
+        <image name="list.dash" catalog="system" width="128" height="85"/>
         <image name="mic" catalog="system" width="108" height="128"/>
         <image name="noteslogo1" width="512" height="512"/>
         <image name="pencil" catalog="system" width="128" height="113"/>
@@ -687,9 +707,6 @@
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemGray3Color">
-            <color red="0.7803921568627451" green="0.7803921568627451" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGray6Color">
             <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

@@ -37,9 +37,10 @@ class ContainerController : UIViewController {
     
     //MARK:- Handlers
     func configureHomecontroller() {
-        let homeController = HomeController()
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let homeController = storyboard.instantiateViewController(withIdentifier: "DashboardViewController") as! DashboardViewController    //HomeController()
         homeController.delegate = self
-        centerController = UINavigationController(rootViewController: homeController)
+        centerController = homeController//UINavigationController(rootViewController: homeController)
         
         view.addSubview(centerController.view)
         addChild(centerController)
