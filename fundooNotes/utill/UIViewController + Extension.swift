@@ -8,7 +8,7 @@ import Foundation
 import UIKit
 
 extension UIViewController {
-    
+    //it is a custom alert we can use it anywhere
     public func openAlert(title: String,
                           message: String,
                           alertStyle:UIAlertController.Style,

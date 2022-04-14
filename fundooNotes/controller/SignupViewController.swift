@@ -7,6 +7,9 @@
 
 import UIKit
 import FirebaseAuth
+import Firebase
+import FirebaseFirestore
+
 
 
 class SignupViewController: UITableViewController {
@@ -50,6 +53,7 @@ class SignupViewController: UITableViewController {
                             //Navigation code
                             print("navigation code Yeah")
                             firbaseAuthEmailPassword()
+                            
                         }else{
                             print("password does not matched")
                         }
@@ -65,20 +69,48 @@ class SignupViewController: UITableViewController {
     }
     
     func firbaseAuthEmailPassword() {
+        //create clean version of data
+        let userName = txtUsername.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+        let email = txtEmail.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+        let password = txtPasswod.text!.trimmingCharacters(in: .whitespacesAndNewlines)
         
-        Auth.auth().createUser(withEmail: txtEmail.text!, password: txtPasswod.text!) {  authResult, error in
-            if error != nil {
-                print(error?.localizedDescription ?? "Exception")
-            }else {
-                print("LOGIN - \(String(describing: authResult?.user.uid))")
-//                if authResult?.user.uid != nil{
-//
-//                }else{
-//                    self.navigationController?.popViewController(animated: true)
-//                }
+        print("email =======> \(email)")
+        print("password =======> \(password)")
+
+        //create user
+        Auth.auth().createUser(withEmail: email, password: password) { [self] (result, err) in
+            //check for errors
+            if err != nil {
+                //there was an error creating the user
+                self.showError("Error creating user")
+                print("Error creating user")
+            } else {
+                //user are created sucessfully now stored first name and last name
+                let db = Firestore.firestore()
+                
+                let uid = result!.user.uid
+                db.collection("users").document(uid).setData(["username": userName, "email": email , "uid": uid]) { (error) in
+                    if error != nil {
+                        //show error message
+                        self.showError("Error saving user data")
+                        print("Error saving user data")
+                    } else {
+                        UserManager.shared.saveGoogleToken(token: uid)
+                        self.transitionToHome()
+                    }
+                }    
+                self.dismiss(animated: true, completion: nil)
+                //transition to home screen
             }
         }
+        
     }
+    
+    func showError(_ message: String) {
+//        errorLabel.text = message
+//        errorLabel.alpha = 1
+    }
+    
     
     
     @IBAction func btnLoginClicked(_ sender: UIButton) {
@@ -103,6 +135,13 @@ class SignupViewController: UITableViewController {
         self.tableView.contentInset = UIEdgeInsets(top: topInset, left: 0.0, bottom: 0.0, right: 0.0)
     }
     
+    //method for navigate controller to home screen
+    func transitionToHome() {
+//        let homeViewController = storyboard?.instantiateViewController(withIdentifier: Constants.Storyboard.homeViewController) as? HomeViewController
+        view.window?.rootViewController = ContainerController()
+        view.window?.makeKeyAndVisible()
+        
+    }
 }
 
 extension SignupViewController: UINavigationControllerDelegate,UIImagePickerControllerDelegate{

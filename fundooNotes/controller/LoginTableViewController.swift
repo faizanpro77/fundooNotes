@@ -26,25 +26,25 @@ class LoginTableViewController: UITableViewController {
         
     }
     
-   
+    
     @IBAction func btnGoogleLogin(_ sender: UIButton) {
         
         print("Google btn clicked.....")
         GIDSignIn.sharedInstance.signIn(with: GIDConfiguration.init(clientID: "879786320034-391ge2p87gba4br27979qgqniol8v4tt.apps.googleusercontent.com"), presenting: self) { googleUser, err in
-            print("******************* \(googleUser)!")
+            print("******************* \(String(describing: googleUser))!")
             guard let googleUser = googleUser else {
                 return
             }
-            print(googleUser.profile?.email)
+            print(googleUser.profile?.email ?? "")
         }
     }
     
-   
+    
     
     @IBAction func btnLoginClicked(_ sender: UIButton) {
         emailPasswordValidation()
         //txtEmail.text!.demo()
-      
+        
     }
     
     
@@ -63,8 +63,11 @@ class LoginTableViewController: UITableViewController {
         Auth.auth().signIn(withEmail: txtEmail.text!, password: txtPassword.text!) {  authResult, error in
             if error != nil {
                 print(error?.localizedDescription ?? "Exception")
-            }else {
+            } else {
                 print("LOGIN - \(String(describing: authResult?.user.uid))")
+                let token = authResult?.user.uid
+                UserManager.shared.saveGoogleToken(token: token)
+                self.transitionToHome()
             }
         }
     }
@@ -87,7 +90,7 @@ class LoginTableViewController: UITableViewController {
                 
                 let request = FBSDKLoginKit.GraphRequest(graphPath: "me", parameters: ["fields": "id, email, first_name, last_name, picture, short_name, name, middle_name, name_format,age_range"], tokenString: token, version: nil, httpMethod: .get)
                 request.start { (connection, result, error) in
-                    print("\(result)")
+                    print("\(String(describing: result))")
                 }
             }else{
                 loginButton.permissions = ["public_profile", "email"]
@@ -96,13 +99,19 @@ class LoginTableViewController: UITableViewController {
         }
     }
     
-   func googleLogin() {
-       if GIDSignIn.sharedInstance.hasPreviousSignIn(){
-           print("Already Login")
-       }
+    func googleLogin() {
+        if GIDSignIn.sharedInstance.hasPreviousSignIn(){
+            print("Already Login")
+        }
     }
     
-    
+    //method for navigate controller to home screen
+    func transitionToHome() {
+        //        let homeViewController = storyboard?.instantiateViewController(withIdentifier: Constants.Storyboard.homeViewController) as? HomeViewController
+        view.window?.rootViewController = ContainerController()
+        view.window?.makeKeyAndVisible()
+        
+    }
 }
 
 extension LoginTableViewController{
@@ -119,7 +128,7 @@ extension LoginTableViewController{
             } else {
                 //Navigation - Home Screen
                 firbaseAuthEmailPassword()
-
+                
             }
         } else {
             openAlert(title: "Alert", message: "Please add details", alertStyle: .alert, actionTitles: ["Okay"], actionStyles: [.default], actions: [{_ in
@@ -177,16 +186,11 @@ extension LoginTableViewController: LoginButtonDelegate {
         let token = result?.token?.tokenString
         let request = FBSDKLoginKit.GraphRequest(graphPath: "me", parameters: ["fields": "email,name,picture"], tokenString: token, version: nil, httpMethod: .get)
         request.start { (connection, result, error) in
-           // print("result----> \(result)")
         }
-        
-      //  print("Fazzy logs: loginButton(_ loginButton func called")
-       // print("Fazzy logs: error \(error?.localizedDescription ?? "NULL")")
-        //print("Fazzy logs: result \(result)")
     }
     
     func loginButtonWillLogin(_ loginButton: FBLoginButton) -> Bool {
-      //  print("Fazzy logs: loginButtonWillLogin func called")
+        //  print("Fazzy logs: loginButtonWillLogin func called")
         return true
     }
     

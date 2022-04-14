@@ -6,15 +6,15 @@
 //
 
 import UIKit
+import FirebaseAuth
+
 
 class DashboardViewController: UIViewController {
     
     var delegate: HomeControllerDelegate?
     
     var notes: [Note] = [
-        Note(title: "faizan", description: "Shaikh"),
-        Note(title: "danish", description: "khan"),
-        Note(title: "salman", description: "Pathan")]
+        Note(title: "Loading", description: "...", id: "1")]
     
     @IBOutlet weak var collectionViewDashboard: UICollectionView!
     @IBOutlet weak var viewNavigationBar: UIView!
@@ -27,6 +27,8 @@ class DashboardViewController: UIViewController {
     
     
     private var overlayView: UIView?
+    let checkFirebaseLogin = Auth.auth().currentUser?.uid
+    
     
     
     override func viewDidLoad() {
@@ -34,19 +36,33 @@ class DashboardViewController: UIViewController {
         
         collectionViewDashboard.delegate = self
         collectionViewDashboard.dataSource = self
+        setUpUI()
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        getNotes()
+    }
+    
+    func getNotes() {
+        FirebaseNoteService().toGetNotesData { (notesData) in
+            self.notes =  notesData
+            self.collectionViewDashboard.reloadData()
+        }
+    }
+        
+    
+    
+    
+    
+    private func setUpUI() {
         
         collectionViewDashboard.contentInset.top = 20
         collectionViewDashboard.contentInset.bottom = 20
         
         collectionViewDashboard.register(UINib(nibName: "NotesCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "NotesCollectionViewCellID")
         
-        setUpUI()
         
-    }
-    
-    
-    
-    private func setUpUI() {
         addNewNoteButton.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.25).cgColor
         addNewNoteButton.layer.shadowOffset = CGSize(width: 0, height: 2.0)
         addNewNoteButton.layer.shadowOpacity = 1.0
@@ -56,13 +72,33 @@ class DashboardViewController: UIViewController {
         
         showProfileButton.layer.cornerRadius = showProfileButton.frame.width/2
         viewNavigationBar.layer.cornerRadius = viewNavigationBar.frame.height/2
-        
-        
-        
     }
     
     
     @IBAction func showProfile(_ sender: UIButton) {
+        print("==========> inside show profile")
+        if checkFirebaseLogin != nil {
+            let firebaseAuth = Auth.auth()
+            do {
+                try firebaseAuth.signOut()
+                print("Logout Successful From Firebase")
+                goToLoginScreen()
+            } catch let err {
+                print("Firebase error--->",err)
+            }
+        }
+        //        goToLoginScreen()
+        
+    }
+    
+    //method for navigate controller to home screen
+    func goToLoginScreen() {
+        let loginTableViewController = storyboard?.instantiateViewController(withIdentifier: Constants.StoryBoard.LoginTableViewController) as? LoginTableViewController
+        
+        let nav = UINavigationController(rootViewController: loginTableViewController!)
+        view.window?.rootViewController = nav
+        view.window?.makeKeyAndVisible()
+        
         
     }
     
@@ -105,8 +141,9 @@ class DashboardViewController: UIViewController {
         self.present(noteDetailController, animated: true, completion: nil)
         
     }
-    
 }
+    
+
 
 extension DashboardViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
@@ -136,15 +173,17 @@ extension DashboardViewController: UICollectionViewDelegate, UICollectionViewDat
         let noteDetailController = self.storyboard?.instantiateViewController(withIdentifier: "NoteDetailViewController") as! NoteDetailViewController
         noteDetailController.modalPresentationStyle = .fullScreen
         noteDetailController.note = notes[indexPath.item]
+        noteDetailController.noteType = .update
         self.present(noteDetailController, animated: true, completion: nil)
     }
     
     
+    
 }
 
 
 
-struct Note {
-    var title: String
-    var description: String
-}
+
+//                navigationController?.popViewController(animated: true)
+//                self.dismiss(animated: true, completion: nil)
+//               navigationController?.pushViewController(noteDetailController, animated: true)
