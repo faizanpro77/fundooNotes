@@ -1,9 +1,8 @@
-//
+
 //  SignupViewController.swift
 //  fundooNotes
-//
 //  Created by Yashom on 11/03/22.
-//
+
 
 import UIKit
 import FirebaseAuth
@@ -26,6 +25,7 @@ class SignupViewController: UITableViewController {
         let  tapGasture = UITapGestureRecognizer(target: self, action: #selector(imageTapped(tapGestureRecognizer:)))
         //imgProfile.isUserInteractionEnabled = true
         imgProfile.addGestureRecognizer(tapGasture)
+        
     }
     
     @objc

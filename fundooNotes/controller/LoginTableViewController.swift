@@ -91,6 +91,7 @@ class LoginTableViewController: UITableViewController {
                 let request = FBSDKLoginKit.GraphRequest(graphPath: "me", parameters: ["fields": "id, email, first_name, last_name, picture, short_name, name, middle_name, name_format,age_range"], tokenString: token, version: nil, httpMethod: .get)
                 request.start { (connection, result, error) in
                     print("\(String(describing: result))")
+                    print("\(result)")
                 }
             }else{
                 loginButton.permissions = ["public_profile", "email"]
@@ -117,7 +118,7 @@ class LoginTableViewController: UITableViewController {
 extension LoginTableViewController{
     fileprivate func emailPasswordValidation() {
         if let email = txtEmail.text, let password = txtPassword.text{
-            if !email.validateEmailId(){
+            if !email.validateEmailId() {
                 openAlert(title: "Alert", message: "Email address not found", alertStyle: .alert, actionTitles: ["Okey"], actionStyles: [.default], actions: [{_ in
                     print("Okay clicked!")
                 }])
@@ -186,6 +187,7 @@ extension LoginTableViewController: LoginButtonDelegate {
         let token = result?.token?.tokenString
         let request = FBSDKLoginKit.GraphRequest(graphPath: "me", parameters: ["fields": "email,name,picture"], tokenString: token, version: nil, httpMethod: .get)
         request.start { (connection, result, error) in
+            print("\(result)")
         }
     }
     

@@ -8,7 +8,24 @@
 import Foundation
 
 import Foundation
+import UIKit
 
+//struct Faizan {
+//    var label: UILabel = UILabel()
+//}
+//
+//
+//extension Faizan {
+//    func blackHair() {
+//        label.textColor = .black
+//    }
+//}
+//
+//func sslfkj() {
+//    let fz = Faizan()
+//
+//    fz.blackHair()
+//}
 
 extension String {
     func validateEmailId() -> Bool {
@@ -30,6 +47,7 @@ extension String {
     }
     
     func applyPredicateOnRegex(regexStr: String) -> Bool {
+        //let trimmedString = "faizanShaikh".trimmingCharacters(in: .whitespaces)
         let trimmedString = self.trimmingCharacters(in: .whitespaces)
         let validateOtherString = NSPredicate(format: "SELF MATCHES %@", regexStr)
         let isValidateOtherString = validateOtherString.evaluate(with: trimmedString)
