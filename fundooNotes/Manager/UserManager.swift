@@ -13,7 +13,6 @@ class UserManager {
     
     static let shared = UserManager()
     
-    
     private init() { }
     
     func saveGoogleToken(token: String?) {

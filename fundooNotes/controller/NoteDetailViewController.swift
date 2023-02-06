@@ -11,7 +11,9 @@ enum NoteType {
     case new
     case update
 }
+
 class NoteDetailViewController: UIViewController,UITextViewDelegate {//, UITextViewDelegate {
+   
     
     
     @IBOutlet weak var bottonBack: UIButton!
@@ -45,7 +47,7 @@ class NoteDetailViewController: UIViewController,UITextViewDelegate {//, UITextV
             return
         }
         print("textViewDidBeginEditing")
-        if titleTextView.textColor == UIColor.lightGray   {
+        if titleTextView.textColor == UIColor.lightGray    {
             titleTextView.text = nil
             titleTextView.textColor = UIColor.black
         }
@@ -55,9 +57,9 @@ class NoteDetailViewController: UIViewController,UITextViewDelegate {//, UITextV
             descriptionTextView.text = nil
             descriptionTextView.textColor = UIColor.black
         }
-        
-        
     }
+    
+    
     
     func textViewDidEndEditing(_ textView: UITextView) {
         
@@ -75,6 +77,7 @@ class NoteDetailViewController: UIViewController,UITextViewDelegate {//, UITextV
             descriptionTextView.text = "Note"
             descriptionTextView.textColor = UIColor.lightGray
         }
+        
     }
     
     private func setupNote() {

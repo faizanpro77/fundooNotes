@@ -595,10 +595,10 @@
                                         </connections>
                                     </button>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="1Xa-Co-NGn">
-                                        <rect key="frame" x="224" y="0.0" width="150" height="30"/>
+                                        <rect key="frame" x="183" y="0.0" width="191" height="30"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rGy-01-nla">
-                                                <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="43.666666666666664" height="30"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="30" id="VdX-bb-26u"/>
                                                     <constraint firstAttribute="height" constant="30" id="hCE-M1-BMT"/>
@@ -610,7 +610,7 @@
                                                 </buttonConfiguration>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XUO-UR-fnt">
-                                                <rect key="frame" x="60" y="0.0" width="30" height="30"/>
+                                                <rect key="frame" x="73.666666666666686" y="0.0" width="43.666666666666657" height="30"/>
                                                 <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain">
@@ -618,10 +618,10 @@
                                                 </buttonConfiguration>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H4R-gh-kMK">
-                                                <rect key="frame" x="120" y="0.0" width="30" height="30"/>
+                                                <rect key="frame" x="147.33333333333331" y="0.0" width="43.666666666666657" height="30"/>
                                                 <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain">
+                                                <buttonConfiguration key="configuration" style="plain" image="ellipsis" catalog="system">
                                                     <backgroundConfiguration key="background" image="archivebox" catalog="system"/>
                                                 </buttonConfiguration>
                                             </button>
@@ -709,6 +709,7 @@
         <image name="arrow.backward" catalog="system" width="128" height="98"/>
         <image name="bell" catalog="system" width="128" height="124"/>
         <image name="checkmark.square" catalog="system" width="128" height="114"/>
+        <image name="ellipsis" catalog="system" width="128" height="37"/>
         <image name="list.dash" catalog="system" width="128" height="85"/>
         <image name="mic" catalog="system" width="108" height="128"/>
         <image name="noteslogo1" width="512" height="512"/>

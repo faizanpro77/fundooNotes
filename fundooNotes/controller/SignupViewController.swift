@@ -106,6 +106,16 @@ class SignupViewController: UITableViewController {
         
     }
     
+    
+    //method for navigate controller to home screen
+    func transitionToHome() {
+//        let homeViewController = storyboard?.instantiateViewController(withIdentifier: Constants.Storyboard.homeViewController) as? HomeViewController
+        view.window?.rootViewController = ContainerController()
+        view.window?.makeKeyAndVisible()
+        
+    }
+    
+    
     func showError(_ message: String) {
 //        errorLabel.text = message
 //        errorLabel.alpha = 1
@@ -135,13 +145,7 @@ class SignupViewController: UITableViewController {
         self.tableView.contentInset = UIEdgeInsets(top: topInset, left: 0.0, bottom: 0.0, right: 0.0)
     }
     
-    //method for navigate controller to home screen
-    func transitionToHome() {
-//        let homeViewController = storyboard?.instantiateViewController(withIdentifier: Constants.Storyboard.homeViewController) as? HomeViewController
-        view.window?.rootViewController = ContainerController()
-        view.window?.makeKeyAndVisible()
-        
-    }
+   
 }
 
 extension SignupViewController: UINavigationControllerDelegate,UIImagePickerControllerDelegate{

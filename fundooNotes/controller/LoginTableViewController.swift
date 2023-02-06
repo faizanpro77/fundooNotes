@@ -8,9 +8,9 @@
 import UIKit
 import FacebookLogin
 import FBSDKLoginKit
-import Firebase
 import GoogleSignIn
 import FirebaseAuth
+import Firebase
 
 class LoginTableViewController: UITableViewController {
     
@@ -51,9 +51,10 @@ class LoginTableViewController: UITableViewController {
     @IBAction func btnForgotPswd(_ sender: UIButton) {
         Auth.auth().sendPasswordReset(withEmail: txtEmail.text!) { (error) in
             if error != nil {
-                print("Sent ......")
-            }else {
                 print("Failed - \(String(describing: error?.localizedDescription))")
+               
+            }else {
+                print("Sent ......")
             }
         }
     }
@@ -72,6 +73,16 @@ class LoginTableViewController: UITableViewController {
         }
     }
     
+    
+    //method for navigate controller to home screen
+    func transitionToHome() {
+        //        let homeViewController = storyboard?.instantiateViewController(withIdentifier: Constants.Storyboard.homeViewController) as? HomeViewController
+        view.window?.rootViewController = ContainerController()
+        view.window?.makeKeyAndVisible()
+        
+    }
+    
+    
     @IBAction func btnSignupClicked(_ sender: UIButton) {
         if let signupVC = self.storyboard?.instantiateViewController(identifier: "SignupViewController") as? SignupViewController{
             self.navigationController?.pushViewController(signupVC, animated: true)
@@ -81,9 +92,7 @@ class LoginTableViewController: UITableViewController {
     func facebookLogin() {
         _ = FBLoginButton()
         if let token = AccessToken.current,
-           !token.isExpired {
-            // User is logged in, do work such as go to next view controller.
-            if let token = AccessToken.current,
+           
                !token.isExpired {
                 // User is logged in, do work such as go to next view controller.
                 let token = token.tokenString
@@ -97,7 +106,6 @@ class LoginTableViewController: UITableViewController {
                 loginButton.permissions = ["public_profile", "email"]
                 loginButton.delegate = self
             }
-        }
     }
     
     func googleLogin() {
@@ -106,13 +114,7 @@ class LoginTableViewController: UITableViewController {
         }
     }
     
-    //method for navigate controller to home screen
-    func transitionToHome() {
-        //        let homeViewController = storyboard?.instantiateViewController(withIdentifier: Constants.Storyboard.homeViewController) as? HomeViewController
-        view.window?.rootViewController = ContainerController()
-        view.window?.makeKeyAndVisible()
-        
-    }
+    
 }
 
 extension LoginTableViewController{
@@ -177,7 +179,6 @@ extension LoginTableViewController {
     override func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         0
     }
-    
 }
 
 

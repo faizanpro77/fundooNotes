@@ -41,7 +41,7 @@ class DashboardViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        getNotes()
+        getNotes() 
     }
     
     func getNotes() {
@@ -51,9 +51,6 @@ class DashboardViewController: UIViewController {
         }
     }
         
-    
-    
-    
     
     private func setUpUI() {
         
@@ -87,7 +84,7 @@ class DashboardViewController: UIViewController {
                 print("Firebase error--->",err)
             }
         }
-        //        goToLoginScreen()
+                goToLoginScreen()
         
     }
     
